@@ -19,15 +19,12 @@ const readJSONFile = (filename, callback) => {
 };
 
 /* GET index page. */
-router.get('/', (req, res) => {
-  readJSONFile('data/datatypes.json', (err, data) => {
+router.get('/:name', (req, res) => {
+  readJSONFile('data/datastructure_'+req.params.name+'.json', (err, data) => {
     if (err) {
       res.status(500).send(`Error: ${err}`);
       return;
     }
-    // data.forEach((obj) => {
-    //   delete obj.info;
-    // });
     res.send(data);
   });
 });

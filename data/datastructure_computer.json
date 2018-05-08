@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "processor": {
+      "type": "string"
+    },
+    "storage": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "memory": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "memory"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "memory": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "type",
+            "memory"
+          ]
+        }
+      ]
+    },
+    "ram": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "processor",
+    "storage",
+    "ram"
+  ]
+}

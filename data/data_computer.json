@@ -1,0 +1,8 @@
+{
+  "processor": "i7 7500U",
+  "storage": [
+    {"type": "HDD", "memory": 1024},
+    {"type": "SSD", "memory": 512}
+  ],
+  "ram": 8
+}

@@ -1,0 +1,10 @@
+[
+    {
+      "name": "person",
+      "info": "Shows a the information recording to a person."
+    },
+    {
+      "name": "computer",
+      "info": "Shows the structure of a computer."
+    }
+]
