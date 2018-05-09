@@ -10,5 +10,9 @@
       "memory": 512
     }
   ],
-  "ram": 8
+  "ram": 8,
+  "cooler": {
+    "name": "Aplenfön",
+    "speed": 1500
+  }
 }

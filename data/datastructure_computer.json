@@ -42,6 +42,17 @@
     },
     "ram": {
       "type": "integer"
+    },
+    "cooler": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "speed": {
+          "type": "integer"
+        }
+      }
     }
   },
   "required": [
