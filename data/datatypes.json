@@ -1,10 +1,14 @@
 [
-    {
-      "name": "person",
-      "info": "Shows a the information recording to a person."
-    },
-    {
-      "name": "computer",
-      "info": "Shows the structure of a computer."
-    }
+  {
+    "name": "person",
+    "info": "Shows a the information recording to a person."
+  },
+  {
+    "name": "computer",
+    "info": "Shows the structure of a computer."
+  },
+  {
+    "name": "mountpoint",
+    "info": "Shows the structure of a mountpoint (linux)."
+  }
 ]

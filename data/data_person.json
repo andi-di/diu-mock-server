@@ -1,13 +1,19 @@
 {
-    "firstname": "Andreas",
-    "lastname": "Dirr",
-    "age": 25,
-    "address": {
-      "street": "An der Hülle",
-      "number": 2
+  "firstname": "Andreas",
+  "lastname": "Dirr",
+  "age": 25,
+  "address": {
+    "street": "An der Hülle",
+    "number": 2
+  },
+  "pets": [
+    {
+      "name": "Emmy",
+      "type": "Dog"
     },
-    "pets": [
-      {"name": "Emmy", "type": "Dog"},
-      {"name": "Paul", "type": "Cat"}
-    ]
-  }
+    {
+      "name": "Paul",
+      "type": "Cat"
+    }
+  ]
+}
