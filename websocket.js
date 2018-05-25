@@ -1,11 +1,12 @@
 const WebSocket = require('ws');
+import readJSONFile from './tools/utils';
 
 export default function createWebsocket(server) {
   const wss = new WebSocket.Server({ server });
   let allClients = [];
 
   wss.on('connection', (client) => {
-    let subscribedTopics = [];
+    let subscribedTopics = ["computer"];
     let publishingTopics = [];
     let sendInterval;
     client['subscribedTopics'] = subscribedTopics;
@@ -51,16 +52,27 @@ export default function createWebsocket(server) {
       console.log("Number of connected clients: " + allClients.length);
     })
 
-    sendInterval = setInterval(() => {
+    sendInterval = setTimeout(() => {
+      console.log("Interval tick ...")
       allClients.forEach(tmpClient => {
-        tmpClient.subscribedTopics.forEach(topicName => {
-          tmpClient.send({
-            topicName: topicName,
-            data: "test"
-          })
+        tmpClient.subscribedTopics.forEach(tmpTopicName => {
+          readJSONFile('tools/data/data_'+tmpTopicName+'.json', (err, tmpData) => {
+            if (err) {
+              tmpClient.send(JSON.stringify({
+                topicName: tmpTopicName,
+                error: err
+              }));
+            } else {
+              tmpClient.send(JSON.stringify({
+                topicName: tmpTopicName,
+                data: tmpData
+              }));
+            }
+            return;
+          });
         });
       })
-    }, 3000);
+    }, 1000);
 
     allClients.push(client);
     console.log("Connect ...");

@@ -1,33 +1,16 @@
 import express from 'express';
-
+import readJSONFile from '../tools/utils';
 const fs = require('fs');
-
 const router = express.Router();
 
-const readJSONFile = (filename, callback) => {
-  fs.readFile(filename, (err, data) => {
-    if (err) {
-      callback(err);
-      return;
-    }
-    try {
-      callback(null, JSON.parse(data));
-    } catch (exception) {
-      callback(exception);
-    }
-  });
-};
 
 /* GET index page. */
 router.get('/', (req, res) => {
-  readJSONFile('data/datatypes.json', (err, data) => {
+  readJSONFile('tools/data/datatypes.json', (err, data) => {
     if (err) {
       res.status(500).send(`Error: ${err}`);
       return;
     }
-    // data.forEach((obj) => {
-    //   delete obj.info;
-    // });
     res.send(data);
   });
 });
