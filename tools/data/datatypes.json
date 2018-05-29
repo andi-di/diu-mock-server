@@ -1,14 +1,20 @@
 [
-  {
-    "name": "person",
-    "info": "Shows a the information recording to a person."
-  },
-  {
-    "name": "computer",
-    "info": "Shows the structure of a computer."
-  },
-  {
-    "name": "mountpoint",
-    "info": "Shows the structure of a mountpoint (linux)."
-  }
+  "person",
+  "computer",
+  "mountpoint",
+  "not implemented 1",
+  "not implemented 2",
+  "not implemented 3",
+  "not implemented 4",
+  "not implemented 5",
+  "not implemented 6",
+  "not implemented 7",
+  "not implemented 8",
+  "not implemented 9",
+  "not implemented 10",
+  "not implemented 11",
+  "not implemented 12",
+  "not implemented 13",
+  "not implemented 14",
+  "not implemented 15"
 ]
