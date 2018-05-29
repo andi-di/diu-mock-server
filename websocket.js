@@ -2,47 +2,50 @@ const WebSocket = require('ws');
 import readJSONFile from './tools/utils';
 
 export default function createWebsocket(server) {
-  const wss = new WebSocket.Server({ server });
+  const wss = new WebSocket.Server({
+    server
+  });
   const intervalTime = 3000;
   let allClients = [];
 
   wss.on('connection', (client) => {
     // ############# Open connection to one client ################
-    let subscribedTopics = [];
-    let publishingTopics = [];
-    client['subscribedTopics'] = subscribedTopics;
-    client['publishingTopics'] = publishingTopics;
+    client['subscribedTopics'] = [];
+    client['publishingTopics'] = [];
     allClients.push(client);
-    console.log("Connect ...");
-    console.log("Number of connected clients: " + allClients.length);
+    console.log('Connect ...');
+    console.log('Number of connected clients: ' + allClients.length);
 
     // ############# procceed message from this client ################
-    client.on('message', (message) => {
-      if (message.type) {
-        switch (message.type && message.topicName) {
-          case SUBSCRIBE:
-            if (!subscribedTopics.includes(message.topicName)) {
-              subscribedTopics.push(message.topicName);
+    client.on('message', (data) => {
+      const message = JSON.parse(data);
+
+      if (message.type && message.topicName) {
+        switch (message.type) {
+          case 'SUBSCRIBE':
+            if (!client.subscribedTopics.includes(message.topicName)) {
+              client.subscribedTopics.push(message.topicName);
             }
             break;
 
-          case UNSUBSCRIBE:
-            subscribedTopics = subscribedTopics.filter(currentName => currentName != message.topicName);
+          case 'UNSUBSCRIBE':
+            client.subscribedTopics = client.subscribedTopics.filter(currentName => currentName != message.topicName);
             break;
 
-          case PUBLISH:
-            if (!publishingTopics.includes(message.topicName)) {
-              publishingTopics.push(message.topicName);
+          case 'PUBLISH':
+            if (!client.publishingTopics.includes(message.topicName)) {
+              client.publishingTopics.push(message.topicName);
             }
             break;
 
-          case UNPUBLISH:
-            publishingTopics = publishingTopics.filter(currentName => currentName != message.topicName);
+          case 'UNPUBLISH':
+            client.publishingTopics = client.publishingTopics.filter(currentName => currentName != message.topicName);
             break;
 
           default:
             break;
         }
+        console.log('client updated: sub ->', client.subscribedTopics, ' pub ->', client.publishingTopics);
       } else {
         console.log('Received unknown message: ', message);
       }
@@ -53,14 +56,14 @@ export default function createWebsocket(server) {
       //todo
       //CLOSE all PUBLISH and SUBSCRIBE Topics
       allClients = allClients.filter(currentClient => currentClient != client);
-      console.log("Disconnect ...");
-      console.log("Number of connected clients: " + allClients.length);
+      console.log('Disconnect ...');
+      console.log('Number of connected clients: ' + allClients.length);
     })
   });
 
   // ############# Websocket Runtime ################
   setInterval(() => {
-    console.log("WS interval tick ...")
+    console.log('WS interval tick ...');
     allClients.forEach(tmpClient => {
       tmpClient.subscribedTopics.forEach(tmpTopicName => {
         readJSONFile('tools/data/data_' + tmpTopicName + '.json', (err, tmpData) => {
