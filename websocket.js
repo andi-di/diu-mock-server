@@ -5,7 +5,8 @@ export default function createWebsocket(server) {
   const wss = new WebSocket.Server({
     server
   });
-  const intervalTime = 3000;
+  const intervalTime = 500;
+  let idCount = 0;
   let allClients = [];
 
   wss.on('connection', (client) => {
@@ -64,6 +65,9 @@ export default function createWebsocket(server) {
   // ############# Websocket Runtime ################
   setInterval(() => {
     console.log('WS interval tick ...');
+    idCount++;
+    let idTmp = 0;
+    idCount % 2 == 0 ? idTmp = idCount : idTmp = idCount - 1;
     allClients.forEach(tmpClient => {
       tmpClient.subscribedTopics.forEach(tmpTopicName => {
         readJSONFile('tools/data/data_' + tmpTopicName + '.json', (err, tmpData) => {
@@ -73,6 +77,8 @@ export default function createWebsocket(server) {
               error: err
             }));
           } else {
+            tmpData['timestamp'] = Date.now();
+            tmpData['id'] = idTmp;
             tmpClient.send(JSON.stringify({
               topicName: tmpTopicName,
               data: tmpData
