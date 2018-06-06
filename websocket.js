@@ -5,7 +5,7 @@ export default function createWebsocket(server) {
   const wss = new WebSocket.Server({
     server
   });
-  const intervalTime = 500;
+  const intervalTime = 1500;
   let idCount = 0;
   let allClients = [];
 
@@ -41,6 +41,11 @@ export default function createWebsocket(server) {
 
           case 'UNPUBLISH':
             client.publishingTopics = client.publishingTopics.filter(currentName => currentName != message.topicName);
+            break;
+
+          case 'NEWDATA':
+            console.log('New data from Topic:', message.topicName);
+            console.log(message.data);
             break;
 
           default:
