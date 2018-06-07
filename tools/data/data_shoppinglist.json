@@ -1,0 +1,12 @@
+{
+  "fix": [
+    "apples",
+    "bread",
+    "milk"
+  ],
+  "variable": [
+    "cheese",
+    "tomatos",
+    "bananas"
+  ]
+}
