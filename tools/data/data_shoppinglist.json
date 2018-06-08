@@ -8,5 +8,15 @@
     "cheese",
     "tomatos",
     "bananas"
+  ],
+  "candies": [
+    {
+      "name": "chewing gum",
+      "number": 5
+    },
+    {
+      "name": "chocolate",
+      "number": 2
+    }
   ]
 }

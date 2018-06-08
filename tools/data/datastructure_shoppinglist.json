@@ -3,6 +3,36 @@
   "type": "object",
   "primary": "id",
   "properties": {
+    "shop": {
+      "type": "object",
+      "oneOf": [{
+          "discounter": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "onlineshop": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "website": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
     "fix": {
       "type": "array",
       "items": [{
@@ -20,6 +50,24 @@
       "type": "array",
       "items": {
         "type": "string"
+      }
+    },
+    "candies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "name",
+          "number"
+        ]
       }
     }
   },
