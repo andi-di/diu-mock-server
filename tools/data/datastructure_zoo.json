@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "gelände": {
+      "type": "object",
+      "properties": {
+        "addresse": {
+          "type": "object",
+          "properties": {
+            "straße": {
+              "type": "string"
+            },
+            "hausnummer": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "straße",
+            "hausnummer"
+          ]
+        },
+        "gehege": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "tiere": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "tiere": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "tiere"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "addresse",
+        "gehege"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "gelände"
+  ]
+}

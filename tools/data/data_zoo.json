@@ -1,0 +1,26 @@
+{
+	"name": "zoo",
+    "gelände": {
+    	"addresse": {
+           "straße": "testweg",
+           "hausnummer": 2
+        },
+        "gehege": [
+          {
+            "name": "löwengehege",
+            "tiere": [
+                "löwe1",
+                "löwe2"
+              ]
+          },
+          {
+            "name": "zebragehege",
+            "tiere": [
+                "zebra1",
+                "zebra2"
+              ]
+          }
+          
+         ]
+    }
+}
