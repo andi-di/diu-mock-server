@@ -1,0 +1,118 @@
+{
+ "$schema": "http://json-schema.org/draft-04/schema#",
+ "type": "object",
+ "primary": "id",
+ "properties": {
+   "Ort": {
+     "type": "string"
+   },
+   "Uhrzeit": {
+     "type": "string"
+   },
+   "Schiri": {
+     "type": "string"
+   },
+   "Mannschaften": {
+     "type": "array",
+     "items": [
+       {
+         "type": "object",
+         "properties": {
+           "Name": {
+             "type": "string"
+           },
+           "Spieler": {
+             "type": "array",
+             "items": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Alter": {
+                    "type": "string"
+                  },
+                  "Position": {
+                    "type": "string",
+                    "enum": [
+                      "Torwart",
+                      "Abwehr",
+                      "Mittelfeld",
+                      "Sturm"
+                    ]
+                  },
+                  "Verletzt": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "Name",
+                  "Alter"
+                ]
+              }
+           }
+         },
+         "required": [
+           "Name"
+         ]
+       },
+       {
+         "type": "object",
+         "properties": {
+           "Name": {
+             "type": "string"
+           },
+           "Spieler": {
+             "type": "array",
+             "items": [
+               {
+                 "type": "object",
+                 "properties": {
+                   "Name": {
+                     "type": "string"
+                   },
+                   "Alter": {
+                     "type": "string"
+                   }
+                 },
+                 "required": [
+                   "Name",
+                   "Alter"
+                 ]
+               },
+               {
+                 "type": "object",
+                 "properties": {
+                   "Name": {
+                     "type": "string"
+                   },
+                   "Alter": {
+                     "type": "string"
+                   }
+                 },
+                 "required": [
+                   "Name",
+                   "Alter"
+                 ]
+               },
+               {
+                 "type": "string"
+               }
+             ]
+           }
+         },
+         "required": [
+           "Name",
+           "Spieler"
+         ]
+       }
+     ]
+   }
+ },
+ "required": [
+   "Ort",
+   "Uhrzeit",
+   "Schiri",
+   "Mannschaften"
+ ]
+}

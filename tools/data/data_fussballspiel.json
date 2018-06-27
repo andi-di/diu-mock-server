@@ -1,0 +1,33 @@
+{
+  "Ort": "München",
+  "Uhrzeit": "12-12-18",
+  "Schiri": "Peter Enis",
+  "Mannschaften": [
+    {
+      "Name": "FC Bayern",
+      "Spieler": [
+        {
+          "Name": "Manuel Neuer",
+          "Alter": "30"
+        },
+        {
+          "Name": "Manuel Neuer",
+          "Alter": "30"
+        }
+      ]
+    },
+    {
+      "Name": "FC Barcelona",
+      "Spieler": [
+        {
+          "Name": "Lionel Messi",
+          "Alter": "31"
+        },
+        {
+          "Name": "Andres Iniesta",
+          "Alter": "34"
+        }
+      ]
+    }
+  ]
+}
