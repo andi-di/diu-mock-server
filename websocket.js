@@ -21,8 +21,8 @@ export default function createWebsocket(server) {
     client.on('message', (data) => {
       const message = JSON.parse(data);
 
-      if (message.type && message.topicName) {
-        switch (message.type) {
+      if (message.action && message.topicName) {
+        switch (message.action) {
           case 'SUBSCRIBE':
             if (!client.subscribedTopics.includes(message.topicName)) {
               client.subscribedTopics.push(message.topicName);

@@ -8,7 +8,7 @@ import path from 'path';
 
 import index from './routes/index';
 import datatypes from './routes/datatypes';
-import datastructure from './routes/datastructure';
+import datastructures from './routes/datastructures';
 
 const app = express();
 const debug = Debug('mock-server:app');
@@ -51,7 +51,7 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 app.use('/datatypes', datatypes);
-app.use('/datastructure', datastructure);
+app.use('/datastructures', datastructures);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
