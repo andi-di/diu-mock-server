@@ -5,7 +5,7 @@ export default function createWebsocket(server) {
   const wss = new WebSocket.Server({
     server
   });
-  const intervalTime = 1500;
+  const intervalTime = 2000;
   let idCount = 0;
   let allClients = [];
 
