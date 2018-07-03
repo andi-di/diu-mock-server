@@ -7,7 +7,12 @@
      "type": "string"
    },
    "Uhrzeit": {
-     "type": "string"
+     "type": "string",
+     "format": "time"
+   },
+   "Datum": {
+     "type": "string",
+     "format": "date"
    },
    "Schiri": {
      "type": "string"
@@ -94,9 +99,6 @@
                    "Name",
                    "Alter"
                  ]
-               },
-               {
-                 "type": "string"
                }
              ]
            }
@@ -112,6 +114,7 @@
  "required": [
    "Ort",
    "Uhrzeit",
+   "Datum",
    "Schiri",
    "Mannschaften"
  ]

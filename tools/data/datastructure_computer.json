@@ -4,8 +4,7 @@
   "type": "object",
   "properties": {
     "processor": {
-      "type": "string",
-      "maxLength": 5
+      "type": "string"
     },
     "storage": {
       "type": "array",

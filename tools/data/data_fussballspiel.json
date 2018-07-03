@@ -1,18 +1,23 @@
 {
   "Ort": "München",
-  "Uhrzeit": "12-12-18",
-  "Schiri": "Peter Enis",
+  "Uhrzeit": "22:20:50",
+  "Datum": "2018-04-12T00:00:00.00Z",
+  "Schiri": "Max Schirimann",
   "Mannschaften": [
     {
       "Name": "FC Bayern",
       "Spieler": [
         {
           "Name": "Manuel Neuer",
-          "Alter": "30"
+          "Alter": "30",
+          "Position": "Torwart",
+          "Verletzt": true
         },
         {
-          "Name": "Manuel Neuer",
-          "Alter": "30"
+          "Name": "Joshua Kimmich",
+          "Alter": "23",
+          "Position": "Abwehr",
+          "Verletzt": false
         }
       ]
     },
