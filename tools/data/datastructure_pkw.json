@@ -1,0 +1,187 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "primary": "id",
+  "properties": {
+    "Marke": {
+      "type": "string"
+    },
+    "Erstzulassung": {
+      "type": "string",
+      "format": "date"
+    },
+    "Vorbesitzer": {
+      "type": "integer",
+      "min": 1
+    },
+    "Karosserie": {
+      "type": "object",
+      "properties": {
+        "Fahrzeugtyp": {
+          "type": "string",
+          "enum": [
+            "Cabrio",
+            "Pickup",
+            "Kleinwagen",
+            "Kombi",
+            "Limousine",
+            "Coupe",
+            "Van / Minibus"
+          ]
+        },
+        "Farbe": {
+          "type": "string",
+          "enum": [
+            "Schwarz",
+            "Weiß",
+            "Rot",
+            "Grün",
+            "Blau",
+            "Grau",
+            "Gelb",
+            "Braun",
+            "andere"
+          ]
+        },
+        "Unfallfrei": {
+          "type": "boolean"
+        },
+        "Reifen": {
+          "type": "array",
+          "items": [{
+              "type": "object",
+              "properties": {
+                "Marke": {
+                  "type": "string"
+                },
+                "Profiltiefe": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Marke"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Marke": {
+                  "type": "string"
+                },
+                "Profiltiefe": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Marke"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Marke": {
+                  "type": "string"
+                },
+                "Profiltiefe": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Marke"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "Marke": {
+                  "type": "string"
+                },
+                "Profiltiefe": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "Marke"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "Fahrzeugtyp",
+        "Farbe",
+        "Unfallfrei"
+      ]
+    },
+    "Motor": {
+      "type": "object",
+      "properties": {
+        "PS": {
+          "type": "integer",
+          "min": 1
+        },
+        "Hubraum": {
+          "type": "number",
+          "min": "0.01"
+        },
+        "Laufleistung": {
+          "type": "integer",
+          "min": 1
+        },
+        "Kraftstoff": {
+          "type": "string",
+          "enum": [
+            "Diesel",
+            "Benzin",
+            "Gas",
+            "Elektro",
+            "andere"
+          ]
+        },
+        "Umwelt": {
+          "type": "object",
+          "properties": {
+            "Kraftstoffverbrauch": {
+              "type": "number",
+              "min": 0.1
+            },
+            "Schadstoffklasse": {
+              "type": "string",
+              "enum": [
+                "Euro1",
+                "Euro2",
+                "Euro3",
+                "Euro4",
+                "Euro5",
+                "Euro6"
+              ]
+            }
+          },
+          "required": [
+            "Schadstoffklasse"
+          ]
+        }
+      },
+      "required": [
+        "PS",
+        "Hubraum",
+        "Laufleistung",
+        "Kraftstoff",
+        "Umwelt"
+      ]
+    },
+    "Ausstattung": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "Marke",
+    "Erstzulassung",
+    "Karosserie",
+    "Motor",
+    "Ausstattung"
+  ]
+}

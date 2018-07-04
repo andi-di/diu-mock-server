@@ -1,0 +1,43 @@
+{
+  "Marke": "Mercedes Benz",
+  "Erstzulassung": "2015-10-11",
+  "Vorbesitzer": 2,
+  "Karosserie": {
+    "Fahrzeugtyp": "Kombi",
+    "Farbe": "Schwarz",
+    "Unfallfrei": true,
+    "Reifen": [{
+        "Marke": "Michelin",
+        "Profiltiefe": 3.5
+      },
+      {
+        "Marke": "Michelin",
+        "Profiltiefe": 3.3
+      },
+      {
+        "Marke": "Michelin",
+        "Profiltiefe": 3.4
+      },
+      {
+        "Marke": "Michelin",
+        "Profiltiefe": 3.5
+      }
+    ]
+  },
+  "Motor": {
+    "PS": 170,
+    "Hubraum": 2.2,
+    "Laufleistung": 120135,
+    "Kraftstoff": "Diesel",
+    "Umwelt": {
+      "Kraftstoffverbrauch": 7.1,
+      "Schadstoffklasse": "Euro5"
+    }
+  },
+  "Ausstattung": [
+    "Xenon-Scheinwerfer",
+    "Navigationssystem",
+    "automatische Fensterheber",
+    "Anhängerkupplung"
+  ]
+}
