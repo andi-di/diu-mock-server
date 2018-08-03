@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "primary": "id",
+  "properties": {
+    "Baustil": {
+      "type": "string"
+    },
+    "Farbe": {
+      "type": "string"
+    },
+    "Adresse": {
+      "type": "object",
+      "properties": {
+        "Straße": {
+          "type": "string"
+        },
+        "Hausnummer": {
+          "type": "integer"
+        },
+        "PLZ": {
+          "type": "integer"
+        },
+        "Ort": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Straße",
+        "Hausnummer",
+        "PLZ",
+        "Ort"
+      ]
+    },
+    "vermietet": {
+      "type": "boolean"
+    },
+    "Parteien": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Art": {
+            "type": "string"
+          },
+          "Mitglieder": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "Art",
+          "Mitglieder"
+        ]
+      }
+    }
+  },
+  "required": [
+    "Baustil",
+    "Adresse"
+  ]
+}

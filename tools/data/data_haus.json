@@ -1,0 +1,25 @@
+{
+	"Baustil": "schwäbischer Baustil",
+  	"Farbe": "weiß",
+	"Adresse": {
+		"Straße": "Talweg",
+		"Hausnummer": 2,
+		"PLZ": 89346,
+		"Ort": "Bibertal"
+	},
+  	"vermietet": true,
+	"Parteien": [
+		{
+			"Art": "Familie",
+			"Mitglieder": 3
+		},
+		{
+			"Art": "Paar",
+			"Mitglieder": 2
+		},
+		{
+			"Art": "Wohngemeinschaft",
+			"Mitglieder": 3
+		}
+  ]
+}
